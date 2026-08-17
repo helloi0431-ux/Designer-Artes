@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços - Rafael Torres</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b071e;
+            color: #ffffff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1400px;
+        }
+
+        .card {
+            background-color: #171033;
+            border: 1px solid #2d205c;
+            border-radius: 20px;
+            width: 260px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .card-header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .card-header p {
+            font-size: 0.85rem;
+            color: #a09cb0;
+            margin-bottom: 20px;
+        }
+
+        .tag-destaque {
+            background-color: #ff2a75;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-transform: uppercase;
+        }
+
+        .item-box {
+            background-color: #23194a;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .item-desc {
+            font-size: 0.75rem;
+            color: #a09cb0;
+            margin-top: 4px;
+        }
+
+        .item-price {
+            color: #ff3366;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .btn-whatsapp {
+            background-color: #ff2a75;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+            display: block;
+        }
+
+        .btn-whatsapp.verde {
+            background-color: #00b37e;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- BLOCO 1: Logotipo & Identidade Visual -->
+        <div class="card">
+            <span class="tag-destaque">Mais Pedido</span>
+            <div class="card-header">
+                <h2>Logotipo & Identidade Visual</h2>
+                <p>Sua marca começa aqui</p>
+            </div>
+            <div class="card-body">
+                <div class="item-box">
+                    <div class="item-title">Logotipo Simples</div>
+                    <div class="item-desc">Arquivo editável + PNG</div>
+                    <div class="item-price">R$ 30,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Pacote 2 Logos + Marca d'água</div>
+                    <div class="item-desc">Economia garantida</div>
+                    <div class="item-price">R$ 35,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Identidade Completa</div>
+                    <div class="item-desc">Mockup + Cardápio + Cartão de Visita + 4 Posts</div>
+                    <div class="item-price">R$ 350,00</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Logotipo%20e%20Identidade%20Visual" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+        </div>
+
+        <!-- BLOCO 2: Social Media -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Social Media</h2>
+                <p>Presença que vende</p>
+            </div>
+            <div class="card-body">
+                <div class="item-box">
+                    <div class="item-title">Pacote 4 Posts</div>
+                    <div class="item-desc">Feed + Stories</div>
+                    <div class="item-price">R$ 50,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Pacote 8 Posts</div>
+                    <div class="item-desc">Conteúdo mensal parcial</div>
+                    <div class="item-price">R$ 90,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Pacote 12 Posts</div>
+                    <div class="item-desc">Presença consistente</div>
+                    <div class="item-price">R$ 130,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Pacote 15 Posts</div>
+                    <div class="item-desc">Gestão completa do feed</div>
+                    <div class="item-price">R$ 180,00</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Social%20Media" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+        </div>
+
+        <!-- BLOCO 3: Cardápios & Catálogos -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Cardápios & Catálogos</h2>
+                <p>Apresente com estilo</p>
+            </div>
+            <div class="card-body">
+                <div class="item-box">
+                    <div class="item-title">Cardápio Comum</div>
+                    <div class="item-desc">PDF pronto para imprimir</div>
+                    <div class="item-price">R$ 50,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Catálogo Digital Básico</div>
+                    <div class="item-desc">Link compartilhável</div>
+                    <div class="item-price">R$ 45,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Catálogo Interativo</div>
+                    <div class="item-desc">Animado + links clicáveis</div>
+                    <div class="item-price">R$ 200,00</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Cardápios%20e%20Catálogos" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+        </div>
+
+        <!-- BLOCO 4: Papelaria & Convites -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Papelaria & Convites</h2>
+                <p>Detalhes que encantam</p>
+            </div>
+            <div class="card-body">
+                <div class="item-box">
+                    <div class="item-title">Tabela de Valores</div>
+                    <div class="item-desc">Layout profissional</div>
+                    <div class="item-price">R$ 40,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Convite Simples (PDF)</div>
+                    <div class="item-desc">Pronto para enviar</div>
+                    <div class="item-price">R$ 35,00</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Convite Interativo</div>
+                    <div class="item-desc">Animado + personalizado</div>
+                    <div class="item-price" style="color: #ff2a75; font-size: 0.8rem;">sob consulta</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Papelaria%20e%20Convites" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+        </div>
+
+        <!-- BLOCO 5: Gestão de Redes Sociais -->
+        <div class="card">
+            <span class="tag-destaque" style="background-color: #00b37e;">Plano Mensal</span>
+            <div class="card-header">
+                <h2>Gestão de Redes Sociais</h2>
+                <p>Sua presença online no piloto automático</p>
+            </div>
+            <div class="card-body">
+                <div class="item-box">
+                    <div class="item-title">Organização do perfil</div>
+                    <div class="item-desc">Bio, destaques e identidade visual</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Planejamento de conteúdo</div>
+                    <div class="item-desc">Estratégia personalizada</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Criação de artes e postagens</div>
+                    <div class="item-desc">Design profissional</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Publicação de posts e stories</div>
+                    <div class="item-desc">Gestão completa</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-title">Estratégias para atrair clientes</div>
+                    <div class="item-desc">Crescimento garantido</div>
+                    <div class="item-price">R$ 450,00/mês</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20contratar%20o%20Plano%20Mensal%20de%20Gestão%20de%20Redes%20Sociais" target="_blank" class="btn-whatsapp verde">Solicitar orçamento</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

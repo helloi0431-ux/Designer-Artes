@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>Rafael Torres | Designer Artes</title>
+  <style>
+    :root {
+      --gold: #f5bd35;
+      --gold2: #ffd96a;
+      --black: #050505;
+      --card: #111111;
+      --card-inner: #191919;
+      --border-card: rgba(245,189,53,.25);
+      --white: #f5f5f5;
+      --muted: #b9b9b9;
+    
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(245,189,53,.14), transparent 35%),
+        var(--black);
+      color: var(--white);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1200px, 92%); margin: auto; }
+
+    header {
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .hero { 
+      position: relative; 
+      text-align: center; 
+      z-index: 1; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo {
+      width: min(460px, 92vw);
+      max-height: 55vh;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 35px rgba(0,0,0,.55));
+      margin-bottom: 20px;
+    }
+    .hero-text { margin-top: 5px; }
+    .hero-text p {
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 19px);
+    }
+    .buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .25s;
+      border: 1px solid var(--gold);
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-primary { background: var(--gold); color: #111; }
+    .btn-secondary { background: transparent; color: var(--gold2); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245,189,53,.18); }
+
+    section { padding: 80px 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .section-title span {
+      display: block;
+      width: 70px;
+      height: 3px;
+      margin: 14px auto;
+      background: var(--gold);
+      border-radius: 10px;
+    }
+    .section-title p { color: var(--muted); }
+
+    /* ESTILO DOS CARDS DE PREÇOS (PRETO E DOURADO) */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      width: 270px;
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: .25s;
+    }
+    .card:hover {
+      border-color: rgba(245,189,53,.65);
+      transform: translateY(-5px);
+    }
+    .card-header h3 {
+      font-size: 1.15rem;
+      margin-bottom: 5px;
+      color: var(--gold2);
+    }
+    .card-header p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .tag-destaque {
+      background-color: var(--gold);
+      color: #111;
+      font-size: 0.65rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 10px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-transform: uppercase;
+    }
+    .tag-verde {
+      background-color: var(--green);
+      color: #fff;
+    }
+    .item-box {
+      background-color: var(--card-inner);
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .item-title {
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+    .item-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .item-price {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+    .btn-whatsapp {
+      background-color: var(--gold);
+      color: #111;
+      border: none;
+      border-radius: 25px;
+      padding: 12px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: opacity 0.2s, transform 0.2s;
+      display: block;
+      width: 100%;
+    }
+    .btn-whatsapp.verde {
+      background-color: var(--green);
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* PORTFÓLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .portfolio-card {
+      min-height: 210px;
+      border-radius: 18px;
+      border: 1px dashed rgba(245,189,53,.4);
+      background: linear-gradient(135deg, #151515, #090909);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+    }
+    .portfolio-card strong { display:block; color:var(--gold2); font-size:18px; margin-bottom:6px; }
+
+    /* CONTATO */
+    .contact {
+      background: linear-gradient(180deg, transparent, rgba(245,189,53,.07));
+      text-align: center;
+    }
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 42px 25px;
+      border: 1px solid rgba(245,189,53,.25);
+      border-radius: 24px;
+      background: rgba(17,17,17,.8);
+    }
+    .contact-box h2 { font-size: clamp(28px, 4vw, 42px); }
+    .contact-box p { color: var(--muted); margin: 12px 0 25px; }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .social {
+      padding: 11px 18px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      color: #ddd;
+    }
+    footer {
+      text-align: center;
+      padding: 28px 15px;
+      border-top: 1px solid #1c1c1c;
+      color: #777;
+      font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header { min-height: auto; padding: 45px 0 65px; }
+      header::before { width: 340px; height: 340px; }
+      .logo { width: 92vw; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero container">
+    <img class="logo" src="logo.png.png" alt="Rafael Torres Designer Artes">
+    <div class="hero-text">
+      <p>Design • Criatividade • Identidade visual</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#servicos">Ver Tabela de Preços</a>
+        <a class="btn btn-secondary" href="https://instagram.com/designer_artes22" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SEÇÃO DE SERVIÇOS E PREÇOS DETALHADOS -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Serviços & Investimento</h2>
+      <span></span>
+      <p>Escolha o pacote ideal para destacar a sua marca no mercado.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BLOCO 1: Logotipo & Identidade Visual -->
+      <div class="card">
+        <span class="tag-destaque">Mais Pedido</span>
+        <div class="card-header">
+          <h3>Logotipo & Identidade Visual</h3>
+          <p>Sua marca começa aqui</p>
+        </div>
+        <div class="card-body">
+          <div class="item-box">
+            <div class="item-title">Logotipo Simples</div>
+            <div class="item-desc">Arquivo editável + PNG</div>
+            <div class="item-price">R$ 30,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Pacote 2 Logos + Marca d'água</div>
+            <div class="item-desc">Economia garantida</div>
+            <div class="item-price">R$ 35,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Identidade Completa</div>
+            <div class="item-desc">Mockup + Cardápio + Cartão de Visita + 4 Posts</div>
+            <div class="item-price">R$ 350,00</div>
+          </div>
+        </div>
+        <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Logotipo%20e%20Identidade%20Visual" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+      </div>
+
+      <!-- BLOCO 2: Social Media -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Social Media</h3>
+          <p>Presença que vende</p>
+        </div>
+        <div class="card-body">
+          <div class="item-box">
+            <div class="item-title">Pacote 4 Posts</div>
+            <div class="item-desc">Feed + Stories</div>
+            <div class="item-price">R$ 50,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Pacote 8 Posts</div>
+            <div class="item-desc">Conteúdo mensal parcial</div>
+            <div class="item-price">R$ 90,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Pacote 12 Posts</div>
+            <div class="item-desc">Presença consistente</div>
+            <div class="item-price">R$ 130,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Pacote 15 Posts</div>
+            <div class="item-desc">Gestão completa do feed</div>
+            <div class="item-price">R$ 180,00</div>
+          </div>
+        </div>
+        <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Social%20Media" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+      </div>
+
+      <!-- BLOCO 3: Cardápios & Catálogos -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Cardápios & Catálogos</h3>
+          <p>Apresente com estilo</p>
+        </div>
+        <div class="card-body">
+          <div class="item-box">
+            <div class="item-title">Cardápio Comum</div>
+            <div class="item-desc">PDF pronto para imprimir</div>
+            <div class="item-price">R$ 50,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Catálogo Digital Básico</div>
+            <div class="item-desc">Link compartilhável</div>
+            <div class="item-price">R$ 45,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Catálogo Interativo</div>
+            <div class="item-desc">Animado + links clicáveis</div>
+            <div class="item-price">R$ 200,00</div>
+          </div>
+        </div>
+        <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Cardápios%20e%20Catálogos" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+      </div>
+
+      <!-- BLOCO 4: Papelaria & Convites -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Papelaria & Convites</h3>
+          <p>Detalhes que encantam</p>
+        </div>
+        <div class="card-body">
+          <div class="item-box">
+            <div class="item-title">Tabela de Valores</div>
+            <div class="item-desc">Layout profissional</div>
+            <div class="item-price">R$ 40,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Convite Simples (PDF)</div>
+            <div class="item-desc">Pronto para enviar</div>
+            <div class="item-price">R$ 35,00</div>
+          </div>
+          <div class="item-box">
+            <div class="item-title">Convite Interativo</div>
+            <div class="item-desc">Animado + personalizado</div>
+            <div class="item-price" style="color: var(--gold); font-size: 0.8rem;">sob consulta</div>
+          </div>
+        </div>
+        <a href="https://wa.me/5581983630838?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Papelaria%20e%20Convites" target="_blank" class="btn-whatsapp">Solicitar orçamento</a>
+      </div>
+
+      
+
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DE PORTFÓLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2>Portfólio</h2>
+      <span></span>
+      <p>Confira alguns dos trabalhos e identidades visuais desenvolvidos:</p>
+    </div>
+    
+    <div class="portfolio">
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto1.jpeg.png" alt="Projeto 1" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto2.jpeg.jpeg" alt="Projeto 2" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto3.jpeg.jpeg" alt="Projeto 3" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto4.jpeg.jpeg" alt="Projeto 4" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto5.jpeg.jpeg" alt="Projeto 5" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto6.jpeg.jpeg" alt="Projeto 6" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto7.jpeg.jpeg" alt="Projeto 7" style="width: 100% ; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="portfolio-card" style="padding: 0; overflow: hidden; border: 1px solid var(--gold);">
+        <img src="projeto8.jpeg.jpeg" alt="Projeto 8" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DE CONTATO -->
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Vamos criar sua arte?</h2>
+      <p>Entre em contato para solicitar um orçamento e transformar sua ideia em um projeto profissional.</p>
+      <a class="btn btn-primary" href="https://wa.me/5581983630838?text=Olá%20Rafael!%20Vim%20pelo%20site%20Designer%20Artes%20e%20quero%20um%20orçamento." target="_blank">💬 Falar no WhatsApp</a>
+      <div class="socials">
+        <a class="social" href="https://instagram.com/designer_artes22" target="_blank">@designer_artes22</a>
+        <a class="social" href="tel:+5581983630838">(81) 98363-0838</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rafael Torres — Designer Artes. Design • Criatividade.
+</footer>
+
+</body>
+</html>
